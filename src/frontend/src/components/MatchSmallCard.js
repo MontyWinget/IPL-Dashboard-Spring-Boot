@@ -1,22 +1,9 @@
-import { React, useEffect } from 'react';
+import { React } from 'react';
 
-export const MatchSmallCard = () => {
-
-    useEffect(
-        () => {
-            const fetchMatches = async () => {
-                const response = await fetch('http://localhost:8080/team/Delhi%20Capitals');
-                const data = await response.json();
-                console.log(data);
-            };
-            fetchMatches();
-        }
-    );
-
-
+export const MatchSmallCard = ({match}) => {
   return (
     <div className="MatchSmallCard">
-      <p>Match Small Card</p>
+      <p>{match.team1} vs {match.team2}</p>
     </div>
   );
 }
